@@ -34,6 +34,7 @@ class Strelok(Player):
         self.bullet = bullet
     
     def crit(self, enemy):
+
         y = randint(1, 10)
         if y == 3:
             enemy.healt -= enemy.healt
@@ -48,7 +49,10 @@ class Strelok(Player):
         print(enemy.armor)
         if enemy.armor < 0:
             enemy.healt += self.hit - self.hit + enemy.armor
-            print("Здоровье врага:", enemy.healt)
+        self.bullet -= 1
+        print("Здоровье врага:", enemy.healt)
+        print("Броня врага", enemy.armor)
+        print("Патроны", self.bullet)
             
 
 
