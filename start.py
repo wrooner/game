@@ -53,10 +53,17 @@ class Strelok(Player):
         print("Здоровье врага:", enemy.healt)
         print("Броня врага", enemy.armor)
         print("Патроны", self.bullet)
+
+    def shop(self):
+        if self.money >=10:
+            self.bullet += 10 
+            self.money -= 10
+            print('Куплено')
+        print('Баланс', self.money)
+        print("Патронов", self.bullet)
             
 
 
-St = Strelok(100, 100, 100, 100, 59, 50)
-Dt = Strelok(500, 100, 100, 50, 59, 50)
+St = Strelok(110, 100, 100, 100, 10, 50)
+Dt = Strelok(100, 100, 100, 50, 59, 50)
 
-St.fire(Dt)
